@@ -12,4 +12,4 @@ _Google speech to text API_
 1. prompt
 
 
-color '#0969DA'
+<span style="color:yellow">노란 글씨입니다.</span>

@@ -12,4 +12,4 @@ _Google speech to text API_
 1. prompt
 
 
-<span style="color:yellow">노란 글씨입니다.</span>
+The background color is `#ffffff` for light mode and `#000000` for dark mode.

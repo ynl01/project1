@@ -1,15 +1,10 @@
 #!/bin/sh
 
-weight=$1
-height=$2
+myfunction() {
+ echo "start program"
+ echo "enter function"
+ ls "$@"
+}
+myfunction "$@"
 
-bmi=$(echo "scale=2; $weight / ($height * $height)" | bc)
-
-if (( $(echo "$bmi >= 18.5 && $bmi < 23" | bc -l) )) ; then
- echo "normal"
-elif (( $(echo "$bmi < 18.5" | bc -l) )) ; then
- echo "low"
-else
- echo "over"
-fi
-
+echo "exit program"

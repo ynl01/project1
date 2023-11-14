@@ -1,18 +1,15 @@
 #!/bin/bash
 
-folder_name=$1
+database="DB.txt"
 
-mkdir -p "$folder_name"
-
-for i in 0 1 2 3 4 ; do
-  touch "$folder_name/file_$i.txt"
-done
+read -p "팀원의 이름을 입력하세요: " search_name
 
 
-for file in "$folder_name"/*; do
-  file_name=$(basename "$file" .txt)
+found_info=$(grep -i "^$search_name:" "$database")
 
-  mkdir -p "$folder_name/$file_name"
+if [ -n "$found_info" ]; then
+  echo "$found_info"
+else
+  echo "검색된 팀원이 없습니다."
+fi
 
-  ln -s "$(realpath "$file_name")" "$folder_name/$file_name/$file_name.txt"
-done
